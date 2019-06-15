@@ -1,0 +1,186 @@
+/* ===== Universal Styling ===== */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/* ===== Hero Styling ===== */
+#hero {
+    width: 100%;
+    height: 100vh;
+    background: url(../media/image1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#banner {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 120, 0.2);
+}
+
+
+/* ===== navbar ===== */
+#logo {
+    font-family: 'Pacifico', cursive;
+    display: inline-block;
+    margin: 3vh 10%;
+    text-shadow: 1px 1px rgb(38, 38, 80);
+}
+
+#logo a {
+    text-decoration: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#logoProperty {
+    color: #18db18;
+}
+
+#logoPro {
+    color: #0000ff;
+}
+
+.topnav {
+    overflow: hidden;
+}
+  
+.topnav a {
+	display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav .push {
+    margin-left: 45vw;
+}
+  
+.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* ===== Sign Up Styling ===== */
+#container {
+	width: 40%;
+	height: auto;
+	background-color: #0000ff73;
+	margin: 0 auto;
+	padding: 1% 5%;
+	border-radius: 5%;
+	text-align: center;
+}
+
+.user-icon {
+	width: 5vw;
+	height: 10vh;
+}
+
+.signUpInput {
+	width: 100%;
+	height: 4vh;
+    margin: 5% auto;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #18db18;
+	border-radius: 3%;
+	font-size: 1.2em;
+	background-color: #0000ff22;
+	color: #fff;
+}
+
+::placeholder {
+	color: #fff;
+}
+
+#signupBtn {
+	width: 50%;
+	height: 7vh;
+	display: block;
+	margin: 3% auto 0 auto;
+	border-radius: 4%;
+	background: linear-gradient(#18db18, #126115);
+	background-color: #0044ff;
+	color: #fff;
+	font-size: 1.3em;
+	box-shadow: inset 0 1px 1px #0044ff;
+	cursor: pointer;
+	border-color: #4b89fc #4b89fc #1654ff;
+}
+
+#login-text {
+	color: #fff;
+	margin-top: 1vh;
+}
+
+#login-text a {
+	text-decoration: none;
+	color: #fff;
+}
+
+/* ===== media queries ===== */
+
+@media (max-width: 1200px) {
+    #container {
+		width: 60%;
+		margin: 10vh auto 0 auto;
+	}
+	
+	.topnav .push {
+		margin-left: 37vw;
+	}
+
+	.user-icon {
+		width: 13vw;
+		height: 10vh;
+	}
+}
+
+@media (max-width: 900px) {
+    #container {
+		width: 70%;
+		margin: 9vh auto 0 auto;
+	}
+	
+	.topnav .push {
+		margin-left: 25vw;
+	}
+
+	.user-icon {
+		width: 15vw;
+		height: 12vh;
+	}
+}
+
+@media (max-width: 500px) {
+	.topnav a:not(:first-child), .dropdown .dropbtn {
+		display: none;
+	}
+
+    #container {
+		width: 90%;
+		margin: 3vh auto 0 auto;
+	}
+	
+	.user-icon {
+		width: 18vw;
+		height: 12vh;
+	}
+
+
+    #signupBtn {
+		width: 100%;
+		height: 8vh;
+	}
+
+    .signUpInput {
+		width: 100%;
+		height: 5vh;
+	}
+}
