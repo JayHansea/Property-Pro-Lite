@@ -1,0 +1,247 @@
+/* ===== Universal Styling ===== */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/* ===== Hero Styling ===== */
+#hero {
+  width: 100%;
+  height: 100vh;
+  background: url(../media/image1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#banner {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 120, 0.5);
+}
+
+/* ===== logo and navbar Styling ===== */
+#logo {
+  font-family: 'Pacifico', cursive;
+  display: inline-block;
+  margin: 3vh 10%;
+  text-shadow: 1px 1px rgb(38, 38, 80);
+}
+
+#logo a {
+  text-decoration: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#logoProperty {
+  color: #18db18;
+}
+
+#logoPro {
+  color: #0000ff;
+}
+
+.topnav {
+  overflow: hidden;
+  /* background-color: #333; */
+}
+
+.topnav a {
+  /* float: left; */
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 1vh 1vw;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav .push {
+  margin-left: 45vw;
+}
+
+.active {
+  background-color: #199b1d;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+/* ===== Homepage section Styling ===== */
+#homepage-container {
+  width: 100vw;
+  height: auto;
+  padding: 2vh 10vw;
+  text-align: center
+}
+
+#homepage-container h1 {
+  color: #fff;
+  font-size: 6.5em;
+  font-family: 'Lobster Two', cursive;
+  text-transform: capitalize;
+  text-shadow: 2.5px 2.5px #18db18;
+}
+
+#homepage-container p {
+  color: #fff;
+  font-size: 2.3em;
+  text-transform: capitalize;
+  text-shadow: 1.5px 1.5px #00f;
+}
+
+#homepage-container .image-div {
+  margin: 5vh 2vw;
+  width: 18vw;
+  height: 35vh;
+  display: inline-block;
+  border: 2px solid #1bdb18;
+  border-radius: 50%;
+  overflow: hidden;
+  text-align: center;
+}
+
+#homepage-container .image-div img {
+  width: 20vw;
+  height: 36vh;
+}
+
+.entry-div {
+  margin: 1.5vh 1vw;
+}
+
+.entry-div a {
+  color: #f2f2f2;
+  text-align: center;
+  padding: 1vh 1vw;
+  text-decoration: none;
+}
+
+.entry-div .active2 {
+  background-color: #199b1d;
+  color: white;
+  padding: 2vh 5vw;
+  font-size: 1.3em;
+}
+
+.entry-div #login2 {
+  margin: 2vh 5vw;
+  font-size: 1em;
+}
+
+
+/* ===== media queries ===== */
+
+@media (max-width: 1200px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+
+  #logo a {
+    font-size: 4rem;
+  }
+
+  .topnav a {
+    font-size: 2rem;
+  }
+  
+  #homepage-container h1 {
+    font-size: 9em;
+    margin: 1vh 1vw;
+  }
+
+  #homepage-container p {
+    font-size: 4em;
+    margin: 0 0 3vh 0;
+  }
+
+  #homepage-container .image-div {
+    margin: 2vh 2vw;
+    width: 22vw;
+    height: 20vh;
+  }
+
+  #homepage-container .image-div img {
+    width: 23vw;
+    height: 20vh;
+  }
+
+  .entry-div {
+    margin: 3vh 1vw;
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 900px) {	
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+
+	#logo a {
+    font-size: 3rem;
+  }
+
+  .topnav a {
+    font-size: 1.7rem;
+  }
+  
+  #homepage-container h1 {
+    font-size: 6.5em;
+    margin: 1vh 1vw;
+  }
+
+  #homepage-container p {
+    font-size: 3em;
+    margin: 0 0 1vh 0;
+  }
+
+  #homepage-container .image-div {
+    margin: 2vh 2vw;
+    width: 22vw;
+    height: 20vh;
+  }
+
+  #homepage-container .image-div img {
+    width: 23vw;
+    height: 20vh;
+  }
+
+  .entry-div {
+    margin: 3vh 1vw;
+    font-size: 1.5em;
+  }
+  
+}
+
+@media (max-width: 500px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+
+  #logo a {
+    font-size: 2rem;
+  }
+
+  #homepage-container h1 {
+    font-size: 5em;
+    margin: 2vh 1vw;
+  }
+
+  #homepage-container p {
+    font-size: 2em;
+    margin: 0 0 3vh 0;
+  }
+
+  #homepage-container .image-div {
+    display: none;
+  }
+
+  .entry-div {
+    margin: 3vh 1vw;
+    font-size: 1em;
+  }
+
+}
