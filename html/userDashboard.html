@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- ===== meta tags ===== -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!-- ===== title ===== -->
+        <title>Property Pro</title>
+        
+        <!-- ===== google font ===== -->
+        <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+
+        <!-- ===== css ===== -->
+        <link rel="stylesheet" href="../css/userDashboard.css">
+	</head>
+	<body>
+
+		<nav class="nav-main">
+			<div class="btn-toggle-nav" onclick="toggleNav()"></div>
+			<div id="logo">
+				<a href="index.html"><span id="logoProperty">Property</span><span id="logoPro">Pro</span></a>
+			</div>
+
+			<p id="username">Ezeokafor Tochukwu</p>
+			<div id="user-image">
+				<img src="https://via.placeholder.com/150" alt="profile image">
+			</div>
+		</nav>
+
+		<aside class="nav-sidebar">
+			<ul>
+				<li><span id="userId"></span></li>
+				<li><a href="#">buy a property</a></li>
+				<li><a href="#">contact an agent</a></li>
+				<li><a href="#">settings</a></li>
+				<li><a href="#">FAQ</a></li>
+			</ul>
+		</aside>
+
+
+		<!-- ===== searchbar ===== -->
+		<div id="search-container">
+            <h1>Search for properties across Nigeria</h1>
+            <div id="searchbar-holder">
+                <div id="searchbar">
+                    <form action="" id="search-form">
+                        <select class="search-inputs" name="" id="sale-rent">
+                            <option value="">---</option>
+                            <option value="">For sale</option>
+                            <option value="">For rent</option>
+                        </select>
+
+                        <select class="search-inputs" name="" id="states">
+                            <option value="">Any State</option>
+                            <option value="">Abuja FCT</option>
+                            <option value="">Abia</option>
+                            <option value="">Adamawa</option>
+                            <option value="">Awka Ibom</option>
+                            <option value="">Anambra</option>
+                            <option value="">Bayelsa</option>
+                            <option value="">Bauchi</option>
+                            <option value="">Benue</option>
+                            <option value="">Borno</option>
+                            <option value="">Cross River</option>
+                            <option value="">Delta</option>
+                            <option value="">Ebonyi</option>
+                            <option value="">Edo</option>
+                            <option value="">Ekiti</option>
+                            <option value="">Enugu</option>
+                            <option value="">Gombe</option>
+                            <option value="">Imo</option>
+                            <option value="">Jigawa</option>
+                            <option value="">Kaduna</option>
+                            <option value="">Kano</option>
+                            <option value="">Katsina</option>
+                            <option value="">Kebbi</option>
+                            <option value="">Kogi</option>
+                            <option value="">Kwara</option>
+                            <option value="">Lagos</option>
+                            <option value="">Nassarawa</option>
+                            <option value="">Niger</option>
+                            <option value="">Ogun</option>
+                            <option value="">Ondo</option>
+                            <option value="">Osun</option>
+                            <option value="">Oyo</option>
+                            <option value="">Plateau</option>
+                            <option value="">Rivers</option>
+                            <option value="">Sokoto</option>
+                            <option value="">Taraba</option>
+                            <option value="">Yobe</option>
+                            <option value="">Zamfara</option>
+                        </select>
+
+                        <select class="search-inputs" name="" id="property-type">
+                            <option value="">Category</option>
+                            <option value="">Houses</option>
+                            <option value="">--Duplex</option>
+                            <option value="">--Terrace</option>
+                            <option value="">--Townhouse</option>
+                            <option value="">--Bungalow</option>
+                            <option value="">Flats & Apartments</option>
+                            <option value="">--Block of flats</option>
+                            <option value="">Lands</option>
+                            <option value="">Commercial Property</option>
+                            <option value="">--Office</option>
+                            <option value="">--Shop</option>
+                            <option value="">--Warehouse</option>
+                            <option value="">--Hotel</option>
+                            <option value="">Short stay</option>
+                            <option value="">Rooms & boys quarters</option>
+                        </select>
+
+                        <select class="search-inputs" name="" id="bedrooms">
+                            <option value="">Bedrooms</option>
+                            <option value="">1+ Bedrooms</option>
+                            <option value="">2+ Bedrooms</option>
+                            <option value="">3+ Bedrooms</option>
+                            <option value="">4+ Bedrooms</option>
+                            <option value="">5+ Bedrooms</option>
+                        </select>
+
+                        <select class="search-inputs" name="" id="bathrooms">
+                            <option value="">Bathrooms</option>
+                            <option value="">1+ Bathrooms</option>
+                            <option value="">2+ Bathrooms</option>
+                            <option value="">3+ Bathrooms</option>
+                            <option value="">4+ Bathrooms</option>
+                            <option value="">5+ Bathrooms</option>
+                        </select>
+                        
+                        <input class="search-inputs" id="min-price" type="text" placeholder="Min. Price">
+                        <input class="search-inputs" id="max-price" type="text" placeholder="Max. Price">
+
+                        <input id="search" type="button" value="Search">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== property listing ===== -->
+        <div id="sale-div">
+        	<h2>Properties for sale</h2>
+        	<div class="card">
+        		<img src="https://via.placeholder.com/150" alt="property image">
+        		<div class="card-container">
+        			<h4 id="property-name"><b>John Doe</b></h4>
+        			<p id="location">Architect & Engineer</p>
+        			<p id="price">₦50,000</p>
+        		</div>
+        		<div class="icon-div">
+        			<span class="call-agent">call</span>
+        			<span class="message-agent">message</span>
+        		</div>
+        	</div>
+        	<div class="card">
+        		<img src="https://via.placeholder.com/150" alt="property image">
+        		<div class="card-container">
+        			<h4 id="property-name"><b>John Doe</b></h4>
+        			<p id="location">Architect & Engineer</p>
+        			<p id="price">₦50,000</p>
+        		</div>
+        		<div class="icon-div">
+        			<span class="call-agent">call</span>
+        			<span class="message-agent">message</span>
+        		</div>
+        	</div>
+        	<div class="card">
+        		<img src="https://via.placeholder.com/150" alt="property image">
+        		<div class="card-container">
+        			<h4 id="property-name"><b>John Doe</b></h4>
+        			<p id="location">Architect & Engineer</p>
+        			<p id="price">₦50,000</p>
+        		</div>
+        		<div class="icon-div">
+        			<span class="call-agent">call</span>
+        			<span class="message-agent">message</span>
+        		</div>
+        	</div>
+        	<div class="card">
+        		<img src="https://via.placeholder.com/150" alt="property image">
+        		<div class="card-container">
+        			<h4 id="property-name"><b>John Doe</b></h4>
+        			<p id="location">Architect & Engineer</p>
+        			<p id="price">₦50,000</p>
+        		</div>
+        		<div class="icon-div">
+        			<span class="call-agent">call</span>
+        			<span class="message-agent">message</span>
+        		</div>
+        	</div>
+        	<div class="card">
+        		<img src="https://via.placeholder.com/150" alt="property image">
+        		<div class="card-container">
+        			<h4 id="property-name"><b>John Doe</b></h4>
+        			<p id="location">Architect & Engineer</p>
+        			<p id="price">₦50,000</p>
+        		</div>
+        		<div class="icon-div">
+        			<span class="call-agent">call</span>
+        			<span class="message-agent">message</span>
+        		</div>
+        	</div>
+        	<div class="card">
+        		<img src="https://via.placeholder.com/150" alt="property image">
+        		<div class="card-container">
+        			<h4 id="property-name"><b>John Doe</b></h4>
+        			<p id="location">Architect & Engineer</p>
+        			<p id="price">₦50,000</p>
+        		</div>
+        		<div class="icon-div">
+        			<span class="call-agent">call</span>
+        			<span class="message-agent">message</span>
+        		</div>
+        	</div>
+        	<div class="card">
+        		<img src="https://via.placeholder.com/150" alt="property image">
+        		<div class="card-container">
+        			<h4 id="property-name"><b>John Doe</b></h4>
+        			<p id="location">Architect & Engineer</p>
+        			<p id="price">₦50,000</p>
+        		</div>
+        		<div class="icon-div">
+        			<span class="call-agent">call</span>
+        			<span class="message-agent">message</span>
+        		</div>
+        	</div>
+        	<div class="card">
+        		<img src="https://via.placeholder.com/150" alt="property image">
+        		<div class="card-container">
+        			<h4 id="property-name"><b>John Doe</b></h4>
+        			<p id="location">Architect & Engineer</p>
+        			<p id="price">₦50,000</p>
+        		</div>
+        		<div class="icon-div">
+        			<span class="call-agent">call</span>
+        			<span class="message-agent">message</span>
+        		</div>
+        	</div>
+        </div>
+
+        <div id="sale-div">
+        	<h2>Properties for rent</h2>
+        	<div class="card">
+        		<img src="https://via.placeholder.com/150" alt="property image">
+        		<div class="card-container">
+        			<h4 id="property-name"><b>John Doe</b></h4>
+        			<p id="location">Architect & Engineer</p>
+        			<p id="price">₦50,000</p>
+        		</div>
+        		<div class="icon-div">
+        			<span class="call-agent">call</span>
+        			<span class="message-agent">message</span>
+        		</div>
+        	</div>
+        	<div class="card">
+        		<img src="https://via.placeholder.com/150" alt="property image">
+        		<div class="card-container">
+        			<h4 id="property-name"><b>John Doe</b></h4>
+        			<p id="location">Architect & Engineer</p>
+        			<p id="price">₦50,000</p>
+        		</div>
+        		<div class="icon-div">
+        			<span class="call-agent">call</span>
+        			<span class="message-agent">message</span>
+        		</div>
+        	</div>
+        	<div class="card">
+        		<img src="https://via.placeholder.com/150" alt="property image">
+        		<div class="card-container">
+        			<h4 id="property-name"><b>John Doe</b></h4>
+        			<p id="location">Architect & Engineer</p>
+        			<p id="price">₦50,000</p>
+        		</div>
+        		<div class="icon-div">
+        			<span class="call-agent">call</span>
+        			<span class="message-agent">message</span>
+        		</div>
+        	</div>
+        	<div class="card">
+        		<img src="https://via.placeholder.com/150" alt="property image">
+        		<div class="card-container">
+        			<h4 id="property-name"><b>John Doe</b></h4>
+        			<p id="location">Architect & Engineer</p>
+        			<p id="price">₦50,000</p>
+        		</div>
+        		<div class="icon-div">
+        			<span class="call-agent">call</span>
+        			<span class="message-agent">message</span>
+        		</div>
+        	</div>
+        	<div class="card">
+        		<img src="https://via.placeholder.com/150" alt="property image">
+        		<div class="card-container">
+        			<h4 id="property-name"><b>John Doe</b></h4>
+        			<p id="location">Architect & Engineer</p>
+        			<p id="price">₦50,000</p>
+        		</div>
+        		<div class="icon-div">
+        			<span class="call-agent">call</span>
+        			<span class="message-agent">message</span>
+        		</div>
+        	</div>
+        	<div class="card">
+        		<img src="https://via.placeholder.com/150" alt="property image">
+        		<div class="card-container">
+        			<h4 id="property-name"><b>John Doe</b></h4>
+        			<p id="location">Architect & Engineer</p>
+        			<p id="price">₦50,000</p>
+        		</div>
+        		<div class="icon-div">
+        			<span class="call-agent">call</span>
+        			<span class="message-agent">message</span>
+        		</div>
+        	</div>
+        	<div class="card">
+        		<img src="https://via.placeholder.com/150" alt="property image">
+        		<div class="card-container">
+        			<h4 id="property-name"><b>John Doe</b></h4>
+        			<p id="location">Architect & Engineer</p>
+        			<p id="price">₦50,000</p>
+        		</div>
+        		<div class="icon-div">
+        			<span class="call-agent">call</span>
+        			<span class="message-agent">message</span>
+        		</div>
+        	</div>
+        	<div class="card">
+        		<img src="https://via.placeholder.com/150" alt="property image">
+        		<div class="card-container">
+        			<h4 id="property-name"><b>John Doe</b></h4>
+        			<p id="location">Architect & Engineer</p>
+        			<p id="price">₦50,000</p>
+        		</div>
+        		<div class="icon-div">
+        			<span class="call-agent">call</span>
+        			<span class="message-agent">message</span>
+        		</div>
+        	</div>
+        </div>
+
+        <!-- ===== footer ===== -->
+        <div class="footer">
+        	<p>Design by Ezeokafor Tochukwu</p>
+        </div>
+
+	<script type="text/javascript" src="../js/userDashboard.js"></script>
+</body>
+</html>
