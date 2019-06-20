@@ -69,3 +69,66 @@ const toggleNav = () => {
 		toggleNavStatus = false;
 	}
 }
+
+// Get the modal
+let modal1 = document.querySelector("#myModal1");
+let modal2 = document.querySelector("#myModal2");
+let modal3 = document.querySelector("#myModal3");
+let modal4 = document.querySelector("#myModal4");
+let modal5 = document.querySelector("#myModal5");
+let modal6 = document.querySelector("#myModal6");
+
+// Get the button that opens the modal
+let btn1 = document.querySelector("#modalsale1");
+let btn2 = document.querySelector("#modalsale2");
+let btn3 = document.querySelector("#modalsale3");
+let btn4 = document.querySelector("#modalsale4");
+let btn5 = document.querySelector("#modalsale5");
+let btn6 = document.querySelector("#modalsale6");
+
+// Get the <span> element that closes the modal
+let span = document.querySelectorAll(".close");
+
+// When the user clicks the button, open the modal 
+btn1.onclick = () => {
+	modal1.style.display = "block";
+}
+
+btn2.onclick = () => {
+	modal2.style.display = "block";
+}
+
+btn3.onclick = () => {
+	modal3.style.display = "block";
+}
+
+btn4.onclick = () => {
+	modal4.style.display = "block";
+}
+
+btn5.onclick = () => {
+	modal5.style.display = "block";
+}
+
+btn6.onclick = () => {
+	modal6.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+for (let i = 0; i < span.length; i++) {
+	 span[i].onclick = () => {
+		modal1.style.display = "none";
+		modal2.style.display = "none";
+		modal3.style.display = "none";
+		modal4.style.display = "none";
+		modal5.style.display = "none";
+		modal6.style.display = "none";
+	  }	
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = (event) => {
+  if (event.target == modal) {
+    modal1.style.display = "none";
+  }
+}
