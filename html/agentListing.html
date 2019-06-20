@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- ===== meta tags ===== -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!-- ===== title ===== -->
+        <title>Property Pro</title>
+        
+        <!-- ===== google font ===== -->
+        <link href="https://fonts.googleapis.com/css?family=Pacifico|Lobster+Two&display=swap" rel="stylesheet">
+
+        <!-- ===== css ===== -->
+        <link rel="stylesheet" href="../css/agentListing.css">
+    </head>
+    <body>
+        <div id="main-container">
+            <!-- ===== navbar ===== -->
+            <nav class="nav-main">
+                <div class="btn-toggle-nav" onclick="toggleNav()"></div>
+                <div id="logo">
+                    <a href="index.html"><span id="logoProperty">Property</span><span id="logoPro">Pro</span></a>
+                </div>
+    
+                <p id="username">Ezeokafor Tochukwu</p>
+                <div id="user-image">
+                    <img src="https://via.placeholder.com/150" alt="profile image">
+                </div>
+            </nav>
+    
+            <!-- ===== sidebar ===== -->
+            <aside class="nav-sidebar">
+                <ul>
+                    <li><span id="userId"></span></li>
+                    <li><a href="#">list of properties</a></li>
+                    <li><a href="#">post a property</a></li>
+                    <li><a href="#">settings</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </aside>
+
+            <!-- ===== advert posting tabs ===== -->
+            <div id="tab-container">
+                
+                
+                <div id="sale" class="tabcontent">
+                    <form action="" id="sale-form">
+                        <select class="search-inputs" name="" id="sale-rent" required>
+                            <option value="">---</option>
+                            <option value="">For sale</option>
+                            <option value="">For rent</option>
+                        </select>
+
+                        <select class="search-inputs" name="" id="property-type" required>
+                            <option value="">Category</option>
+                            <option value="">Houses</option>
+                            <option value="">--Duplex</option>
+                            <option value="">--Terrace</option>
+                            <option value="">--Townhouse</option>
+                            <option value="">--Bungalow</option>
+                            <option value="">Flats & Apartments</option>
+                            <option value="">--Block of flats</option>
+                            <option value="">Lands</option>
+                            <option value="">Commercial Property</option>
+                            <option value="">--Office</option>
+                            <option value="">--Shop</option>
+                            <option value="">--Warehouse</option>
+                            <option value="">--Hotel</option>
+                            <option value="">Short stay</option>
+                            <option value="">Rooms & boys quarters</option>
+                        </select>
+
+                        <select class="search-inputs" name="" id="states" required>
+                            <option value="">Select State</option>
+                            <option value="">Abuja FCT</option>
+                            <option value="">Abia</option>
+                            <option value="">Adamawa</option>
+                            <option value="">Awka Ibom</option>
+                            <option value="">Anambra</option>
+                            <option value="">Bayelsa</option>
+                            <option value="">Bauchi</option>
+                            <option value="">Benue</option>
+                            <option value="">Borno</option>
+                            <option value="">Cross River</option>
+                            <option value="">Delta</option>
+                            <option value="">Ebonyi</option>
+                            <option value="">Edo</option>
+                            <option value="">Ekiti</option>
+                            <option value="">Enugu</option>
+                            <option value="">Gombe</option>
+                            <option value="">Imo</option>
+                            <option value="">Jigawa</option>
+                            <option value="">Kaduna</option>
+                            <option value="">Kano</option>
+                            <option value="">Katsina</option>
+                            <option value="">Kebbi</option>
+                            <option value="">Kogi</option>
+                            <option value="">Kwara</option>
+                            <option value="">Lagos</option>
+                            <option value="">Nassarawa</option>
+                            <option value="">Niger</option>
+                            <option value="">Ogun</option>
+                            <option value="">Ondo</option>
+                            <option value="">Osun</option>
+                            <option value="">Oyo</option>
+                            <option value="">Plateau</option>
+                            <option value="">Rivers</option>
+                            <option value="">Sokoto</option>
+                            <option value="">Taraba</option>
+                            <option value="">Yobe</option>
+                            <option value="">Zamfara</option>
+                        </select>
+
+                        <input class="search-inputs" type="text" name="" id="" placeholder="Enter city address" required>
+
+                        <select class="search-inputs" name="" id="bedrooms" required>
+                            <option value="">Bedrooms</option>
+                            <option value="">1+ Bedrooms</option>
+                            <option value="">2+ Bedrooms</option>
+                            <option value="">3+ Bedrooms</option>
+                            <option value="">4+ Bedrooms</option>
+                            <option value="">5+ Bedrooms</option>
+                        </select>
+
+                        <select class="search-inputs" name="" id="bathrooms" required>
+                            <option value="">Bathrooms</option>
+                            <option value="">1+ Bathrooms</option>
+                            <option value="">2+ Bathrooms</option>
+                            <option value="">3+ Bathrooms</option>
+                            <option value="">4+ Bathrooms</option>
+                            <option value="">5+ Bathrooms</option>
+                        </select>
+
+                        <input class="search-inputs" id="phonenumber" type="text" placeholder="Phone number (eg. +2348012345678)" required>
+                        
+                        <input class="search-inputs" id="price" type="text" placeholder="Price" required>
+
+                        <textarea class="search-inputs" name="" id="textarea" placeholder="Give additional info about the property(optional)"></textarea>
+
+                        <label for="image-input">Insert image of property</label>
+                        <input id="image-input" type="file" name="pic" accept="image/*" required>
+
+                        <input id="post-btn" type="button" value="Post">
+                    </form>
+                </div> 
+            </div> 
+
+            <!-- ===== footer ===== -->
+            <div class="footer">
+                <p>Design by Ezeokafor Tochukwu</p>
+            </div>
+            
+        </div>
+
+
+        <script src="../js/agentListing.js"></script>
+    </body>
+</html>
