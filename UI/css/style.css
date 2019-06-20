@@ -74,7 +74,7 @@
 #homepage-container {
   width: 100vw;
   height: auto;
-  padding: 2vh 10vw;
+  padding: 1vh 10vw;
   text-align: center
 }
 
@@ -94,7 +94,7 @@
 }
 
 #homepage-container .image-div {
-  margin: 5vh 2vw;
+  margin: 4.5vh 2vw;
   width: 18vw;
   height: 35vh;
   display: inline-block;
@@ -110,7 +110,7 @@
 }
 
 .entry-div {
-  margin: 1.5vh 1vw;
+  margin: 2.5vh 1vw;
 }
 
 .entry-div a {
