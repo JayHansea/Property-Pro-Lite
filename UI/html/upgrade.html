@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- ===== meta tags ===== -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!-- ===== title ===== -->
+        <title>Property Pro</title>
+        
+        <!-- ===== google font ===== -->
+        <link href="https://fonts.googleapis.com/css?family=Pacifico|Lobster+Two&display=swap" rel="stylesheet">
+
+        <!-- ===== css ===== -->
+        <link rel="stylesheet" href="../css/agentListing.css">
+    </head>
+    <body>
+        <div id="main-container">
+            <!-- ===== navbar ===== -->
+            <nav class="nav-main">
+                <div class="btn-toggle-nav" onclick="toggleNav()"></div>
+                <div id="logo">
+                    <a href="index.html"><span id="logoProperty">Property</span><span id="logoPro">Pro</span></a>
+                </div>
+    
+                <p id="username">Ezeokafor Tochukwu</p>
+                <div id="user-image">
+                    <img src="https://via.placeholder.com/150" alt="profile image">
+                </div>
+            </nav>
+    
+            <!-- ===== sidebar ===== -->
+            <aside class="nav-sidebar">
+                <ul>
+                    <li><span id="userId"></span></li>
+                    <li><a href="userDashboard.html">Property List</a></li>
+                    <li><a href="upgrade.html">become an agent</a></li>
+                    <li><a href="#">settings</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </aside>
+
+            <!-- ===== advert posting tabs ===== -->
+            <div id="tab-container">
+                
+                
+                <div id="sale" class="tabcontent">
+                    <form action="" id="sale-form">
+                        <input class="search-inputs" type="text" placeholder="firstname" required>
+
+                        <input class="search-inputs" type="text" placeholder="lastname" required>
+
+                        <input class="search-inputs" type="text" placeholder="name of your organization" required>
+
+                        <input class="search-inputs" type="text" name="" id="" placeholder="enter address of organization" required>
+
+                        <input class="search-inputs" id="phonenumber" type="text" placeholder="Phone number (eg. +2348012345678)" required>
+
+                        <textarea class="search-inputs" name="" id="textarea" placeholder="Describe yourself and your organization"></textarea>
+
+                        <label for="image-input">Insert profile image</label>
+                        <input id="image-input" type="file" name="pic" accept="image/*" required>
+
+                        <input id="post-btn" type="button" value="Post">
+                    </form>
+                </div> 
+            </div> 
+
+            <!-- ===== footer ===== -->
+            <div class="footer">
+                <p>Design by Ezeokafor Tochukwu</p>
+            </div>
+            
+        </div>
+
+
+        <script src="../js/dashboard.js"></script>
+    </body>
+</html>
