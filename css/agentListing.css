@@ -11,7 +11,7 @@ body {
 }
 
 #main-container {
-    width: 100%;
+	width: 100%;
     height: auto;
 }
 
@@ -20,8 +20,8 @@ body {
 	position: sticky;
 	top: 0;
 	width: 100%;
-	height: 12vh;
-	background: #00f;
+	height: 10vh;
+	background: #3268d6;
 	display: flex;
 	flex-wrap: wrap;
 	z-index: 1000;
@@ -32,7 +32,7 @@ body {
 	width: 5vw;
 	height: 100%;
 	display: inline-block;
-	background-color: #00f;
+	background-color: #3268d6;
 	background-image: url(../media/nav-icon.png);
 	background-repeat: no-repeat;
 	background-size: 40%;
@@ -45,25 +45,24 @@ body {
 }
 
 #logo {
-    font-family: 'Pacifico', cursive;
-    display: inline-block;
-    margin: 0 5%;
+	font-family: 'Pacifico', cursive;
+	display: inline-block;
+	margin: 0 5%;
+	text-shadow: 1px 1px rgb(38, 38, 80);
 }
 
 #logo a {
-    text-decoration: none;
-    font-size: 2rem;
-    cursor: pointer;
+	text-decoration: none;
+	font-size: 2rem;
+	cursor: pointer;
 }
 
 #logoProperty {
-    color: none;
-    text-shadow: 1.5px 1.5px #fff;
+	color: #18db18;
 }
 
 #logoPro {
-    color: none;
-    text-shadow: 1.5px 1.5px #fff;
+	color: #0000ff;
 }
 
 #username {
@@ -76,7 +75,7 @@ body {
 #user-image {
 	width: 4vw;
 	height: 8vh;
-	border: 2px solid #18db18;
+	border: 2px solid #fff;
 	border-radius: 50%;
 	margin-top: 1vh;
 	overflow: hidden;
@@ -87,10 +86,10 @@ body {
 	position: fixed;
 	left: 0;
 	bottom: 0;
-	width: 5vw;
-	height: calc(100vh - 12vh);
+	width: 1vw;
+	height: calc(100vh - 10vh);
 	padding: 0 1vw;
-	background-color: #00f;
+	background-color: #3268d6;
 	z-index: 1000;
 	transition: all 1s ease-in-out;
 }
@@ -121,13 +120,13 @@ body {
 
 .nav-sidebar ul li a:hover {
 	background-color: #fff;
-	color: #00f
+	color: #3268d6;
 }
 
 /* ===== advert post ===== */
 #tab-container {
     width: 95vw;
-	margin: 0 0 0 5vw;
+	margin: 0 0 0 3vw;
 }
 
 /* Style the tab content (and add height:100% for full page content) */
@@ -161,26 +160,29 @@ label[for=image-input] {
 }
 
 #post-btn {
+	width: 10vw;
     background-color: #009900;
     color: white;
     padding: 1.5vh 4vw;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 39.5vw;
+    margin-left: 75vw;
+}
+
+#silmulation {
+	text-decoration: none;
 }
 
 /* ===== footer ===== */
 .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 5vh;
-    background-color: #00f;
-    color: #fff;
-    text-align: center;
-}
+	width: 100%;
+	height: 5vh;
+	padding-top: 0.002%; 
+	background-color: #3268d6;
+	color: #fff;
+	text-align: center;
+ }
 
 .footer p {
     margin-top: 1vh;

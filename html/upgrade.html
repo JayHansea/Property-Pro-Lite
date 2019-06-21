@@ -19,9 +19,9 @@
         <div id="main-container">
             <!-- ===== navbar ===== -->
             <nav class="nav-main">
-                <div class="btn-toggle-nav" onclick="toggleNav()"></div>
+                <div class="btn-toggle-nav" onclick="toggle_nav()"></div>
                 <div id="logo">
-                    <a href="index.html"><span id="logoProperty">Property</span><span id="logoPro">Pro</span></a>
+                    <a href="userDashboard.html"><span id="logoProperty">Property</span><span id="logoPro">Pro</span></a>
                 </div>
     
                 <p id="username">Ezeokafor Tochukwu</p>
@@ -38,6 +38,7 @@
                     <li><a href="upgrade.html">become an agent</a></li>
                     <li><a href="#">settings</a></li>
                     <li><a href="#">FAQ</a></li>
+                    <li><a href="../index.html">logout</a></li>
                 </ul>
             </aside>
 
@@ -62,7 +63,7 @@
                         <label for="image-input">Insert profile image</label>
                         <input id="image-input" type="file" name="pic" accept="image/*" required>
 
-                        <input id="post-btn" type="button" value="Post">
+                        <a id="silmulation" href="agentDashboard.html"><div id="post-btn">Post</div></a>
                     </form>
                 </div> 
             </div> 

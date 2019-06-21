@@ -1,40 +1,40 @@
-let toggleNavStatus = false;
+let toggle_nav_status = false;
 
-const toggleNav = () => {
-	const getSidebar = document.querySelector(".nav-sidebar");
-	const getSidebarUl = document.querySelector(".nav-sidebar ul");
-	const getSidebarUserid = document.querySelector(".nav-sidebar #userId");
-	const getSidebarLinks = document.querySelectorAll(".nav-sidebar a");
+const toggle_nav = () => {
+	const get_sidebar = document.querySelector(".nav-sidebar");
+	const get_sidebar_ul = document.querySelector(".nav-sidebar ul");
+	const get_sidebar_userid = document.querySelector(".nav-sidebar #userId");
+	const get_sidebar_links = document.querySelectorAll(".nav-sidebar a");
 
-	if (toggleNavStatus === false) {
-		getSidebarUl.style.visibility = "visible";
+	if (toggle_nav_status === false) {
+		get_sidebar_ul.style.visibility = "visible";
 		
-		function myFunction(x) {
+		const media_queries = (x) => {
 			if (x.matches) { // If media query matches
-				getSidebar.style.width = "100vw";
-				getSidebar.style.textAlign = "center";
-					for (let i = 0; i < getSidebarLinks.length; i++) {
-						getSidebarLinks[i].style.fontSize = "2em";
+				get_sidebar.style.width = "100vw";
+				get_sidebar.style.textAlign = "center";
+					for (let i = 0; i < get_sidebar_links.length; i++) {
+						get_sidebar_links[i].style.fontSize = "2em";
 					}
 			} else {
-				getSidebar.style.width = "16vw";
-				getSidebar.style.textAlign = "left";
-				for (let i = 0; i < getSidebarLinks.length; i++) {
-						getSidebarLinks[i].style.fontSize = "1em";
+				get_sidebar.style.width = "16vw";
+				get_sidebar.style.textAlign = "left";
+				for (let i = 0; i < get_sidebar_links.length; i++) {
+						get_sidebar_links[i].style.fontSize = "1em";
 					}
 			}
 
 
 			if (y.matches) { // If media query matches
-					for (let i = 0; i < getSidebarLinks.length; i++) {
-						getSidebarLinks[i].style.fontSize = "2em";
+					for (let i = 0; i < get_sidebar_links.length; i++) {
+						get_sidebar_links[i].style.fontSize = "2em";
 					}
 			}
 
 
 			if (z.matches) { // If media query matches
-				for (let i = 0; i < getSidebarLinks.length; i++) {
-					getSidebarLinks[i].style.fontSize = "1em";
+				for (let i = 0; i < get_sidebar_links.length; i++) {
+					get_sidebar_links[i].style.fontSize = "1em";
 				}
 			}
 		}
@@ -42,31 +42,31 @@ const toggleNav = () => {
 		let x = window.matchMedia("(max-width: 1200px)");
 		let y = window.matchMedia("(max-width: 900px)");
 		let z = window.matchMedia("(max-width: 500px)");
-		myFunction(x) // Call listener function at run time
-		x.addListener(myFunction) // Attach listener function on state changes
-		y.addListener(myFunction)
-		z.addListener(myFunction)
+		media_queries(x) // Call listener function at run time
+		x.addListener(media_queries) // Attach listener function on state changes
+		y.addListener(media_queries)
+		z.addListener(media_queries)
 		
-		getSidebarUserid.style.opacity = "0.5";
+		get_sidebar_userid.style.opacity = "0.5";
 		
-		for (let i = 0; i < getSidebarLinks.length; i++) {
-			getSidebarLinks[i].style.opacity = "1";
+		for (let i = 0; i < get_sidebar_links.length; i++) {
+			get_sidebar_links[i].style.opacity = "1";
 		}
 
-		toggleNavStatus = true;
+		toggle_nav_status = true;
 	}
 
-	else if (toggleNavStatus === true) {
-		getSidebar.style.width = "5vw";
-		getSidebarUserid.style.opacity = "0";
+	else if (toggle_nav_status === true) {
+		get_sidebar.style.width = "1vw";
+		get_sidebar_userid.style.opacity = "0";
 		
-		for (let i = 0; i < getSidebarLinks.length; i++) {
-			getSidebarLinks[i].style.opacity = "0";
+		for (let i = 0; i < get_sidebar_links.length; i++) {
+			get_sidebar_links[i].style.opacity = "0";
 		}
 
-		getSidebarUl.style.visibility = "hidden";
+		get_sidebar_ul.style.visibility = "hidden";
 
-		toggleNavStatus = false;
+		toggle_nav_status = false;
 	}
 }
 
@@ -128,7 +128,22 @@ for (let i = 0; i < span.length; i++) {
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = (event) => {
-  if (event.target == modal) {
+  if (event.target == modal1) {
     modal1.style.display = "none";
+  }
+  if (event.target == modal2) {
+    modal2.style.display = "none";
+  }
+  if (event.target == modal3) {
+    modal3.style.display = "none";
+  }
+  if (event.target == modal4) {
+    modal4.style.display = "none";
+  }
+  if (event.target == modal5) {
+    modal5.style.display = "none";
+  }
+  if (event.target == modal6) {
+    modal6.style.display = "none";
   }
 }
