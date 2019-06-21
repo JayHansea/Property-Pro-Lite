@@ -17,7 +17,7 @@
 #banner {
     width: 100%;
     height: 100vh;
-    background: rgba(0, 0, 120, 0.2);
+    background: rgba(0, 0, 120, 0.5);
 }
 
 
@@ -101,18 +101,14 @@
 }
 
 #signupBtn {
-	width: 50%;
-	height: 7vh;
-	display: block;
-	margin: 3% auto 0 auto;
-	border-radius: 4%;
-	background: linear-gradient(#18db18, #126115);
-	background-color: #0044ff;
-	color: #fff;
-	font-size: 1.3em;
-	box-shadow: inset 0 1px 1px #0044ff;
+	width: 10vw;
+    background-color: #009900;
+    color: white;
+    padding: 1.5vh 4vw;
+    border: none;
+    border-radius: 5px;
 	cursor: pointer;
-	border-color: #4b89fc #4b89fc #1654ff;
+	margin: 3% auto;
 }
 
 #signup-text {

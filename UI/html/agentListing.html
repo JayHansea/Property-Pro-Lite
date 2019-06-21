@@ -10,7 +10,7 @@
         <title>Property Pro</title>
         
         <!-- ===== google font ===== -->
-        <link href="https://fonts.googleapis.com/css?family=Pacifico|Lobster+Two&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
 
         <!-- ===== css ===== -->
         <link rel="stylesheet" href="../css/agentListing.css">
@@ -19,9 +19,9 @@
         <div id="main-container">
             <!-- ===== navbar ===== -->
             <nav class="nav-main">
-                <div class="btn-toggle-nav" onclick="toggleNav()"></div>
+                <div class="btn-toggle-nav" onclick="toggle_nav()"></div>
                 <div id="logo">
-                    <a href="index.html"><span id="logoProperty">Property</span><span id="logoPro">Pro</span></a>
+                    <a href="agentDashboard.html"><span id="logoProperty">Property</span><span id="logoPro">Pro</span></a>
                 </div>
     
                 <p id="username">Ezeokafor Tochukwu</p>
@@ -34,10 +34,11 @@
             <aside class="nav-sidebar">
                 <ul>
                     <li><span id="userId"></span></li>
-                    <li><a href="#">list of properties</a></li>
-                    <li><a href="#">post a property</a></li>
+                    <li><a href="agentDashboard.html">property list</a></li>
+				    <li><a href="agentListing.html">post a property</a></li>
                     <li><a href="#">settings</a></li>
                     <li><a href="#">FAQ</a></li>
+                    <li><a href="../index.html">logout</a></li>
                 </ul>
             </aside>
 
@@ -142,7 +143,7 @@
                         <label for="image-input">Insert image of property</label>
                         <input id="image-input" type="file" name="pic" accept="image/*" required>
 
-                        <input id="post-btn" type="button" value="Post">
+                        <a id="silmulation" href="agentDashboard.html"><div id="post-btn">Post</div></a>
                     </form>
                 </div> 
             </div> 
@@ -155,6 +156,6 @@
         </div>
 
 
-        <script src="../js/agentListing.js"></script>
+        <script src="../js/dashboard.js"></script>
     </body>
 </html>
