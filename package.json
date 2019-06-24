@@ -15,5 +15,15 @@
   "bugs": {
     "url": "https://github.com/JayHansea/Property-Pro-Lite/issues"
   },
-  "homepage": "https://github.com/JayHansea/Property-Pro-Lite#readme"
+  "homepage": "https://github.com/JayHansea/Property-Pro-Lite#readme",
+  "devDependencies": {
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.24.0",
+    "uuid": "^3.3.2"
+  }
 }
