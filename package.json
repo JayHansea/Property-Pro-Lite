@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/JayHansea/Property-Pro-Lite/issues"
   },
-  "homepage": "https://github.com/JayHansea/Property-Pro-Lite#readme"
+  "homepage": "https://github.com/JayHansea/Property-Pro-Lite#readme",
+  "devDependencies": {
+    "eslint": "^6.0.0"
+  }
 }
