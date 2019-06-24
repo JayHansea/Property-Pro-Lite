@@ -1,0 +1,19 @@
+{
+  "name": "property-pro-lite",
+  "version": "1.0.0",
+  "description": "PropertyPro",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JayHansea/Property-Pro-Lite.git"
+  },
+  "author": "Ezeokafor Tochukwu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JayHansea/Property-Pro-Lite/issues"
+  },
+  "homepage": "https://github.com/JayHansea/Property-Pro-Lite#readme"
+}
