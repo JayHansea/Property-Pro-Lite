@@ -1,3 +1,5 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-unresolved */
 import bodyParser from 'body-parser';
 import Controllers from './controllers/register';
 
