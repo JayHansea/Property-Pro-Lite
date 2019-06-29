@@ -32,13 +32,32 @@
                     <!-- ===== sign up ===== -->
                     <div id="container">
                         <img class="user-icon" src="../media/user-icon.png" alt="">
-                        <form action="">
-                            <input class="signUpInput" type="text" name="" id="firstname" placeholder="firstname" required>
-                            <input class="signUpInput" type="text" name="" id="lastname" placeholder="lastname" required>
-                            <input class="signUpInput" type="email" name="" id="email" placeholder="email" required>
-                            <input class="signUpInput" type="password" name="" id="password" placeholder="password" required>
-                            <input class="signUpInput" type="password" name="" id="confirm-password" placeholder="confirm password" required>
-                            <a id="silmulation" href="userDashboard.html"><div id="signupBtn">Sign Up</div></a>
+                        <form id="signupForm" action="">
+                            <div class="formGroup">
+                                <input class="signUpInput" type="text" name="" id="firstname" placeholder="firstname" required>
+                                <span id="firstname-span"></span>
+                            </div>
+                            <div class="formGroup">
+                                <input class="signUpInput" type="text" name="" id="lastname" placeholder="lastname" required>
+                                <span id="lastname-span"></span>
+                            </div>
+                            <div class="formGroup">
+                                <input class="signUpInput" type="text" name="" id="phonenumber" placeholder="phone number" required>
+                                <span id="phone-span"></span>
+                            </div>
+                            <div class="formGroup">
+                                <input class="signUpInput" type="email" name="" id="email" placeholder="email" required>
+                                <span id="email-span"></span>
+                            </div>
+                            <div class="formGroup">
+                                <input class="signUpInput" type="password" name="" id="password" placeholder="password" required>
+                                <span id="password-span"></span>
+                            </div>
+                            <div class="formGroup">
+                                <input class="signUpInput" type="password" name="" id="confirm-password" placeholder="confirm password" required>
+                                <span id="confirm-password-span"></span>
+                            </div>
+                            <div class="formgroup submit"><input type="submit" name="" value="Sign Up"></div>
                         </form>
                         <p id="login-text">Already have an account? <a href="login.html">Login</a></p>
                     </div>
