@@ -1,6 +1,7 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable no-console */
 import express from 'express';
-import routesSetup from './routes';
+import routesSetup from '../src/routes';
 
 const app = express();
 const port = process.env.PORT || 3000;

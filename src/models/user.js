@@ -25,7 +25,7 @@ const database = {
   ],
 };
 
-const Controllers = {
+const Models = {
   home: {
     path: '/',
     handler(req, res) { // http://localhost:3000/ [ GET ]
@@ -33,7 +33,7 @@ const Controllers = {
     },
   },
   register: {
-    path: '/register',
+    path: '/user',
     handler(req, res) { // http://localhost:3000/register [ POST ]
       const {
         // eslint-disable-next-line camelcase
@@ -55,4 +55,4 @@ const Controllers = {
   },
 };
 
-export default Controllers;
+export default Models;
