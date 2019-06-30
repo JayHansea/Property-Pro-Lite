@@ -1,19 +1,27 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _express = _interopRequireDefault(require("express"));
+
+var _routes = _interopRequireDefault(require("../src/routes"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+/* eslint-disable import/no-unresolved */
+
 /* eslint-disable no-console */
-/* eslint-disable no-underscore-dangle */
+var app = (0, _express["default"])();
+var port = process.env.PORT || 3000;
+app.use(_express["default"].json());
+app.use('/', _express["default"]["static"]('UI'));
+(0, _routes["default"])(app); // server
 
-
-// eslint-disable-next-line no-underscore-dangle
-// eslint-disable-next-line no-use-before-define
-const _express = _interopRequireDefault(require('express'));
-
-// eslint-disable-next-line no-underscore-dangle
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// eslint-disable-next-line vars-on-top
-const app = (0, _express.default)();
-app.use(_express.default.json());
-app.get('/', (_req, res) => res.status(200).send({
-  message: 'YAY! Congratulations! Your first endpoint is working',
-}));
-app.listen(3000);
-console.log('app running on port ', 3000);
+app.listen(port, function () {
+  console.log("Server Started On Port ".concat(port));
+});
+var _default = app;
+exports["default"] = _default;
