@@ -31,10 +31,13 @@
                     <!-- ===== sign up ===== -->
                     <div id="container">
                         <img class="user-icon" src="../media/user-icon.png" alt="">
-                        <form action="">
+                        <form id="login-form">
+                            <span id="span-user"></span>
                             <input class="signUpInput" type="email" name="" id="email" placeholder="email" required>
+                            <span id="email-span"></span>
                             <input class="signUpInput" type="password" name="" id="password" placeholder="password" required>
-                            <a id="silmulation" href="userDashboard.html"><div id="signupBtn">Login</div></a>
+                            <span id="password-span"></span>
+                            <div class="formgroup submit"><input type="submit" name="" value="Login"></div>
                         </form>
                         <p id="signup-text">Don't have an account? <a href="signUp.html">Sign up</a></p>
                     </div>
