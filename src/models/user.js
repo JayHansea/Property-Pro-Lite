@@ -1,69 +1,68 @@
 import moment from 'moment';
-import uuid from 'uuid';
 
 class PropertyUser {
-  //    class constructor
-  //    @param {object} data
+  // @param {object} data
 
   constructor() {
     this.user = [];
   }
 
-  //   @returns {object} reflection object
+  // @returns {object} user object
 
   createUser(userInfo) {
     const createUser = {
-      id: uuid.v4(),
-      success: data.success || '',
-      lowPoint: data.lowPoint || '',
-      takeAway: data.takeAway || '',
-      createdDate: moment.now(),
-      modifiedDate: moment.now(),
+      id: this.user.length + 1,
+      email: userInfo.email,
+      first_name: userInfo.first_name.trim(),
+      last_name: userInfo.last_name.trim(),
+      password: userInfo.password,
+      phoneNumber: userInfo.phoneNumber,
+      address: userInfo.address,
+      is_admin: userInfo.email,
     };
-    this.reflections.push(newReflection);
-    return newReflection;
+    this.user.push(createUser);
+    return createUser;
   }
 
-  /**
-   *
-   * @param {uuid} id
-   * @returns {object} reflection object
-   */
-  findOne(id) {
-    return this.reflections.find(reflect => reflect.id === id);
+  // @returns {object} a single user object
+
+  findById(id) {
+    // eslint-disable-next-line radix
+    return this.user.find(user => user.id === parseInt(id));
   }
 
-  /**
-   * @returns {object} returns all reflections
-   */
+  // @returns {object} returns all users
+
   findAll() {
-    return this.reflections;
+    return this.user;
   }
 
-  /**
-   *
-   * @param {uuid} id
-   * @param {object} data
-   */
-  update(id, data) {
-    const reflection = this.findOne(id);
-    const index = this.reflections.indexOf(reflection);
-    this.reflections[index].success = data.success || reflection.success;
-    this.reflections[index].lowPoint = data.lowPoint || reflection.lowPoint;
-    this.reflections[index].takeAway = data.takeAway || reflection.takeAway;
-    this.reflections[index].modifiedDate = moment.now();
-    return this.reflections[index];
+  // @param {object} user updates
+
+  updateUser(id, update) {
+    const userUpdate = this.findById(id);
+    const index = this.user.indexOf(userUpdate);
+    this.user[index].first_name = update.first_name.trim();
+    this.user[index].last_name = update.last_name.trim();
+    this.user[index].phoneNumber = update.phoneNumber;
+    this.user[index].address = update.address;
+    this.user[index].is_admin = update.is_admin;
+    this.user[index].modifiedDate = moment.now();
+    return this.user[index];
   }
 
-  /**
-   *
-   * @param {uuid} id
-   */
+  // @param {uuid} delete user
+
   delete(id) {
-    const reflection = this.findOne(id);
-    const index = this.reflections.indexOf(reflection);
-    this.reflections.splice(index, 1);
-    return {};
+    const deleteUser = this.findById(id);
+    const index = this.user.indexOf(deleteUser);
+    this.user.splice(index, 1);
+    return {
+    status: 200,
+    data: [{
+        id,
+        message: 'Delete User Successful',
+    }],
   }
 }
-export default new Reflection();
+export default new PropertyUser();
