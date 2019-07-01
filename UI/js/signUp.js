@@ -77,7 +77,7 @@ signUpForm.addEventListener('submit', (e) => {
     },
     body: JSON.stringify(formData),
   };
-  fetch(`${currApiEndpoint}/auth/signup`, fetchConfig)
+  fetch(`${currApiEndpoint}./user/signup`, fetchConfig)
     .then(resp => resp.json())
     .then((resp) => {
       const { error, data } = resp;

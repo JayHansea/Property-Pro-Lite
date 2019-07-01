@@ -1,18 +1,14 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable no-console */
 import express from 'express';
-import routesSetup from '../src/routes';
 
 const app = express();
-const port = process.env.PORT || 3000;
 
 app.use(express.json());
+const port = process.env.PORT || 3000;
+
 app.use('/', express.static('UI'));
 
-routesSetup(app);
-
-// server
 app.listen(port, () => {
+  // eslint-disable-next-line no-console
   console.log(`Server Started On Port ${port}`);
 });
 

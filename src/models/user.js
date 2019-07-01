@@ -1,58 +1,69 @@
-/* eslint-disable camelcase */
+import moment from 'moment';
+import uuid from 'uuid';
 
-const database = {
-  users: [
-    {
-      id: 1,
-      email: 'ezeokafortochukwu@gmail.com',
-      first_name: 'Tochukwu',
-      last_name: 'Ezeokafor',
-      password: '123',
-      phoneNumber: '+2348066926408',
-      address: 'Flat 2 Block 5 Yenagoa Street',
-      is_admin: true,
-    },
-    {
-      id: 2,
-      email: 'jayhansea@gmail.com',
-      first_name: 'Tochi',
-      last_name: 'Eze',
-      password: '456',
-      phoneNumber: '+2347010896565',
-      address: 'Flat 2 Block 5 Yen Street',
-      is_admin: false,
-    },
-  ],
-};
+class PropertyUser {
+  //    class constructor
+  //    @param {object} data
 
-const Models = {
-  home: {
-    path: '/',
-    handler(req, res) { // http://localhost:3000/ [ GET ]
-      res.send(database.users);
-    },
-  },
-  register: {
-    path: '/user',
-    handler(req, res) { // http://localhost:3000/register [ POST ]
-      const {
-        // eslint-disable-next-line camelcase
-        email, first_name, last_name, password, phoneNumber, address,
-      } = req.body;
+  constructor() {
+    this.user = [];
+  }
 
-      database.users.push({
-        id: 3,
-        email,
-        first_name,
-        last_name,
-        password,
-        phoneNumber,
-        address,
-        is_admin: false,
-      });
-      res.json(database.users[database.users.length - 1]);
-    },
-  },
-};
+  //   @returns {object} reflection object
 
-export default Models;
+  createUser(userInfo) {
+    const createUser = {
+      id: uuid.v4(),
+      success: data.success || '',
+      lowPoint: data.lowPoint || '',
+      takeAway: data.takeAway || '',
+      createdDate: moment.now(),
+      modifiedDate: moment.now(),
+    };
+    this.reflections.push(newReflection);
+    return newReflection;
+  }
+
+  /**
+   *
+   * @param {uuid} id
+   * @returns {object} reflection object
+   */
+  findOne(id) {
+    return this.reflections.find(reflect => reflect.id === id);
+  }
+
+  /**
+   * @returns {object} returns all reflections
+   */
+  findAll() {
+    return this.reflections;
+  }
+
+  /**
+   *
+   * @param {uuid} id
+   * @param {object} data
+   */
+  update(id, data) {
+    const reflection = this.findOne(id);
+    const index = this.reflections.indexOf(reflection);
+    this.reflections[index].success = data.success || reflection.success;
+    this.reflections[index].lowPoint = data.lowPoint || reflection.lowPoint;
+    this.reflections[index].takeAway = data.takeAway || reflection.takeAway;
+    this.reflections[index].modifiedDate = moment.now();
+    return this.reflections[index];
+  }
+
+  /**
+   *
+   * @param {uuid} id
+   */
+  delete(id) {
+    const reflection = this.findOne(id);
+    const index = this.reflections.indexOf(reflection);
+    this.reflections.splice(index, 1);
+    return {};
+  }
+}
+export default new Reflection();
