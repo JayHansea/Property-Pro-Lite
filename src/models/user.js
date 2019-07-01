@@ -1,4 +1,5 @@
 import moment from 'moment';
+import uuid from 'uuid/v4';
 
 class PropertyUser {
   // @param {object} data
@@ -11,7 +12,7 @@ class PropertyUser {
 
   createUser(userInfo) {
     const createUser = {
-      id: this.user.length + 1,
+      id: uuid,
       email: userInfo.email,
       first_name: userInfo.first_name.trim(),
       last_name: userInfo.last_name.trim(),

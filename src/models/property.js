@@ -1,4 +1,5 @@
 import moment from 'moment';
+import uuid from 'uuid/v4';
 
 class Property {
   // @param {object} data
@@ -11,7 +12,7 @@ class Property {
 
   createProps(propsInfo) {
     const createProps = {
-      id: this.props.length + 1,
+      id: uuid,
       owner: propsInfo.owner,
       status: propsInfo.status,
       price: propsInfo.price,
