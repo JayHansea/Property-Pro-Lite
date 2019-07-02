@@ -1,8 +1,8 @@
-## Property-Pro-Lite
+# Property-Pro-Lite
 PropertyPro enables individuals and families acquire properties of their choice all across Nigeria.
 
-## Features
-# Required Features
+# Features
+## Required Features
 
 1. User can sign up.
 2. User can sign in.
@@ -14,7 +14,7 @@ PropertyPro enables individuals and families acquire properties of their choice 
 8. User can view all properties of a specific type - 2 bedroom, 3 bedroom, mini flat etc.
 9. User can view a specific property advert.
 
-# Optional Features
+## Optional Features
 ● User can reset password.
 ● flag/report a posted AD as fraudulent.
 ● User can add multiple pictures to a posted ad.
@@ -24,46 +24,56 @@ intervention location
 Requirements and Installation
 Via Cloning The Repository
 
-# Clone the app
+## Clone the app
 git clone https://github.com/JayHansea/Property-Pro-Lite.git
 
-# Switch to directory
+## Switch to directory
 cd Property-Pro-Lite
 
-# Install Package dependencies
+## Install Package dependencies
 npm install
 
-# Start the application
+## Start the application
 npm run dev-start
 
-# View the application
+## View the application
 navigate to localhost:3000 to view the application
 Testing
 $ npm run test
-Technologies
-Frontend
+
+## Technologies
+### Frontend
 Html HTML is the standard markup language for creating Web pages.
 
 CSS CSS is a language that describes the style of an HTML document.
 
 Javascript JavaScript is a programming language that adds interactivity to your website.
 
-Backend
+### Backend
 NodeJS is a JavaScript runtime built on Chrome's V8 JavaScript engine
+
 Express JS A minimalist web framework.
+
 Mocha Mocha is a JavaScript test framework, has good integration with NodeJS for testing Javascript applications.
+
 Chai - TDD/BDD Assertion Library for Node
+
 Should - BDD style library for testing node.js HTTP servers
+
 Istanbul(nyc) - Code Coverage Generator
-Linter(s)
+
+### Linter(s)
 ESLint - Linter Tool
-Style Guide
+
+### Style Guide
 Airbnb - Airbnb maintains a very popular JavaScript Style Guide
-Compiler
+
+### Compiler
 Babel - Compiler for Next Generation JavaScript
-Pivotal Tracker
+
+### Pivotal Tracker
 Project is currently being managed with Pivotal Tracker, a project management tool. You can find the stories on the politico Pivotal Tracker Board
 
-Authors
+## Authors
 Ezeokafor Tochukwu - Initial work - JayHansea
 See also the list of contributors who participated in this project.
