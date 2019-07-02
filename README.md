@@ -15,13 +15,12 @@ PropertyPro enables individuals and families acquire properties of their choice 
 9. User can view a specific property advert.
 
 ## Optional Features
-● User can reset password.
-● flag/report a posted AD as fraudulent.
-● User can add multiple pictures to a posted ad.
-● The application should display a Google Map with Marker showing the red-flag or
-intervention location
+1. User can reset password.
+2. flag/report a posted AD as fraudulent.
+3. User can add multiple pictures to a posted ad.
+4. The application should display a Google Map with Marker showing the red-flag or intervention location
 
-Requirements and Installation
+## Requirements and Installation
 Via Cloning The Repository
 
 ## Clone the app
@@ -38,7 +37,8 @@ npm run dev-start
 
 ## View the application
 navigate to localhost:3000 to view the application
-Testing
+
+## Testing
 $ npm run test
 
 ## Technologies
@@ -76,4 +76,5 @@ Project is currently being managed with Pivotal Tracker, a project management to
 
 ## Authors
 Ezeokafor Tochukwu - Initial work - JayHansea
+
 See also the list of contributors who participated in this project.
