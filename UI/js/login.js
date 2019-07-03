@@ -6,7 +6,7 @@ const spanUser = document.querySelector('#span-user');
 
 const currApiEndpoint = '';
 
-logInForm.addEventListener('submit', (e) => {
+logInForm.addEventListener('click', (e) => {
   e.preventDefault();
   const formData = {};
 
@@ -25,7 +25,7 @@ logInForm.addEventListener('submit', (e) => {
     },
     body: JSON.stringify(formData),
   };
-  fetch(`${currApiEndpoint}/auth/login`, fetchConfig)
+  fetch(currApiEndpoint, fetchConfig)
     .then(resp => resp.json())
     .then((resp) => {
       const { error, data } = resp;
@@ -40,17 +40,22 @@ logInForm.addEventListener('submit', (e) => {
         }
       }
       if (data) {
-        const { user, token } = data[0];
-        localStorage.User = JSON.stringify(user);
-        localStorage.admin = token;
-        if (user.type === 'admin') {
-          window.location = './admin-profile.html';
-        } else if (user.type === 'admin') {
-          window.location = './agentDashboard.html';
-        } else {
-          window.location = './userDashboard.html';
-        }
+        const user = JSON.stringify(data);
+        localStorage.setItem('user', user);
+        window.location = './userDashboard.html';
       }
+      // if (data) {
+      //   const { user, token } = data[0];
+      //   localStorage.User = JSON.stringify(user);
+      //   localStorage.admin = token;
+      //   if (user.type === 'admin') {
+      //     window.location = './admin-profile.html';
+      //   } else if (user.type === 'admin') {
+      //     window.location = './agentDashboard.html';
+      //   } else {
+      //     window.location = './userDashboard.html';
+      //   }
+      // }
     })
     .catch(err => console.log(err));
 });
