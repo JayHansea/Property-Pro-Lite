@@ -1,5 +1,5 @@
 import moment from 'moment';
-import uuid from 'uuid/v4';
+// import uuid from 'uuid/v4';
 
 class Property {
   // @param {object} data
@@ -12,7 +12,7 @@ class Property {
 
   createProps(propsInfo) {
     const createProps = {
-      id: uuid,
+      id: this.props.length + 1,
       owner: propsInfo.owner,
       status: propsInfo.status,
       price: propsInfo.price,
@@ -21,7 +21,7 @@ class Property {
       address: propsInfo.address,
       type: propsInfo.type,
       created_on: moment.now(),
-      image_url: propsInfo.image
+      image_url: propsInfo.image,
     };
     this.props.push(createProps);
     return createProps;
@@ -57,11 +57,12 @@ class Property {
     const index = this.props.indexOf(deleteProps);
     this.props.splice(index, 1);
     return {
-    status: 200,
-    data: [{
+      status: 200,
+      data: [{
         id,
         message: 'Property Delete Successful',
-    }],
+      }],
+    };
   }
 }
 export default new Property();

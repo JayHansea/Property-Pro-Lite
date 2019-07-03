@@ -13,7 +13,7 @@ const userController = {
       return res.status(400).send({ message: 'All fields are required' });
     }
     const user = userModel.createUser(req.body);
-    return res.status(201).send(user);
+    return res.status(201).send({ user });
   },
 
 
@@ -24,7 +24,7 @@ const userController = {
 
 
   getOne(req, res) {
-    const oneUser = userModel.findById(req.user.id);
+    const oneUser = userModel.findById(req.param.id);
     if (!oneUser) {
       return res.status(404).send({ message: 'user not found' });
     }

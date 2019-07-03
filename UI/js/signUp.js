@@ -13,19 +13,20 @@ const spanPass = document.querySelector('#password-span');
 const spanConfirmPass = document.querySelector('#confirm-password-span');
 
 
-const currApiEndpoint = '';
+const currApiEndpoint = 'http://localhost:3000/api/v1/user';
 
-signUpForm.addEventListener('submit', (e) => {
+// eslint-disable-next-line consistent-return
+signUpForm.addEventListener('click', (e) => {
   e.preventDefault();
   const formData = {};
   if (signUpFirstName.value) {
-    formData.firstname = signUpFirstName.value;
+    formData.first_name = signUpFirstName.value;
   }
   if (signUpLastName.value) {
-    formData.lastname = signUpLastName.value;
+    formData.last_name = signUpLastName.value;
   }
   if (signUpPhoneNumber.value) {
-    formData.phonenumber = signUpPhoneNumber.value;
+    formData.phoneNumber = signUpPhoneNumber.value;
   }
   if (signUpEmail.value) {
     formData.email = signUpEmail.value;
@@ -77,25 +78,13 @@ signUpForm.addEventListener('submit', (e) => {
     },
     body: JSON.stringify(formData),
   };
-  fetch(`${currApiEndpoint}./user/signup`, fetchConfig)
+  fetch(currApiEndpoint, fetchConfig)
     .then(resp => resp.json())
-    .then((resp) => {
-      const { error, data } = resp;
-      if (error) {
-        if (error.message) {
-          spanEmail.innerHTML = error.message;
-          spanEmail.style.color = 'red';
-        }
-        if (error.phone) {
-          spanPhone.innerHTML = error.phone;
-          spanPhone.style.color = 'red';
-        }
-      }
-
+    .then((data) => {
       if (data) {
-        const { user } = data[0];
-        localStorage.User = JSON.stringify(user);
-        window.location = './login.html';
+        const user = JSON.stringify(data);
+        localStorage.setItem('user', user);
+        window.location = './userDashboard.html';
       }
     })
     .catch(err => console.log(err));

@@ -1,6 +1,7 @@
 import express from 'express';
 import userController from './controllers/user';
 import propertyController from './controllers/property';
+import agentController from './controllers/agent';
 
 const app = express();
 
@@ -12,6 +13,12 @@ app.get('/api/v1/user', userController.getAll);
 app.get('/api/v1/user/:id', userController.getOne);
 app.put('/api/v1/user/:id', userController.update);
 app.delete('/api/v1/user/:id', userController.delete);
+
+app.post('/api/v1/user', agentController.create);
+app.get('/api/v1/user', agentController.getAll);
+app.get('/api/v1/user/:id', agentController.getOne);
+app.put('/api/v1/user/:id', agentController.update);
+app.delete('/api/v1/user/:id', agentController.delete);
 
 app.post('/api/v1/property', propertyController.create);
 app.get('/api/v1/property', propertyController.getAll);
