@@ -1,19 +1,18 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-return-assign */
 /* eslint-disable no-underscore-dangle */
-import User from './user';
+import Agent from './agent';
 import Property from './property';
 
-class Agent extends User {
+class Admin extends Agent {
   static get table() {
-    return 'agent';
+    return 'admin';
   }
 
   static get schema() {
     return Object.assign({}, {
       id: Number,
-      organization_name: String,
-      organization_address: String,
+      is_admin: Boolean,
     }, super.schema);
   }
 
@@ -34,4 +33,4 @@ class Agent extends User {
   }
 }
 
-export default Agent;
+export default Admin;

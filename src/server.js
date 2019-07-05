@@ -1,32 +1,36 @@
+/* eslint-disable no-console */
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-underscore-dangle */
 import express from 'express';
-import userController from './controllers/user';
-import propertyController from './controllers/property';
-import agentController from './controllers/agent';
+import database from './database/index';
+import router from './route';
+
 
 const app = express();
 
 app.use(express.json());
 const port = process.env.PORT || 3000;
 
-app.post('/api/v1/user', userController.create);
-app.get('/api/v1/user', userController.getAll);
-app.get('/api/v1/user/:id', userController.getOne);
-app.put('/api/v1/user/:id', userController.update);
-app.delete('/api/v1/user/:id', userController.delete);
+database.using(new User({ name: 'David Kezi', age: 28 })).write('insert');
+database.using(new Agent({ name: 'Tochukwu Godwin', age: 30 })).write('insert');
+database.using(new Agent({ name: 'Micheal Obi' })).write('update', { age: 30 });
 
-app.post('/api/v1/user', agentController.create);
-app.get('/api/v1/user', agentController.getAll);
-app.get('/api/v1/user/:id', agentController.getOne);
-app.put('/api/v1/user/:id', agentController.update);
-app.delete('/api/v1/user/:id', agentController.delete);
+console.log(database.list());
+console.log(database.listInline());
 
-app.post('/api/v1/property', propertyController.create);
-app.get('/api/v1/property', propertyController.getAll);
-app.get('/api/v1/property/:id', propertyController.getOne);
-app.put('/api/v1/property/:id', propertyController.update);
-app.delete('/api/v1/property/:id', propertyController.delete);
+database.read(User)._rows;
+
+const property = new Property({ location: '125 Olakunle Street, Lagos', price: 23000.00 });
+database.read(Agent, { name: 'Micheal Obi' }).last().createsProperty(property);
+database.using(property).write('insert');
+
+database.read(User).first();
+database.delete(User, { age: 30 });
+database.delete(User);
 
 app.use('/', express.static('UI'));
+app.use(router);
 
 app.listen(port, () => {
   // eslint-disable-next-line no-console

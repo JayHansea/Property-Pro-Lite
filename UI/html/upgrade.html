@@ -47,18 +47,18 @@
                 
                 
                 <div id="sale" class="tabcontent">
-                    <form action="" id="sale-form">
-                        <input class="search-inputs" type="text" placeholder="enter user ID" required>
-
-                        <input class="search-inputs" type="text" placeholder="firstname" required>
-
-                        <input class="search-inputs" type="text" placeholder="lastname" required>
-
-                        <input class="search-inputs" type="text" placeholder="name of your organization" required>
-
-                        <input class="search-inputs" type="text" name="" id="" placeholder="enter address of organization" required>
-
-                        <a id="silmulation" href="agentDashboard.html"><div id="post-btn">Post</div></a>
+                    <form>
+                        <input class="search-inputs" type="text" id="id" placeholder="enter user ID" required>
+                        <span id="id-span"></span>
+                        <input class="search-inputs" type="text" id="firstname" placeholder="firstname" required>
+                        <span id="firstname-span"></span>
+                        <input class="search-inputs" type="text" id="lastname" placeholder="lastname" required>
+                        <span id="lastname-span"></span>
+                        <input class="search-inputs" type="text" id="orgName" placeholder="name of your organization" required>
+                        <span id="orgName-span"></span>
+                        <input class="search-inputs" type="text" name="" id="orgAdd" placeholder="address of organization" required>
+                        <span id="orgAdd-span"></span>
+                        <div class="formgroup submit"><input type="submit" id="post-btn" value="Post"></div>
                     </form>
                 </div> 
             </div> 
@@ -72,5 +72,6 @@
 
 
         <script src="../js/dashboard.js"></script>
+        <script src="../js/upgrade.js"></script>
     </body>
 </html>
