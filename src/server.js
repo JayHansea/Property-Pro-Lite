@@ -44,12 +44,12 @@ app.use(router);
 
 app.listen(port, () => {
   // eslint-disable-next-line no-console
-  console.log("DATABASE CONTENTS: ", database.list());
-  // console.log("DATABASE CONTENTS: ", database.listInline());
+  console.log("DATABASE CONTENTS: ", database.show());
   console.log(`Server Started On Port ${port}`);
 });
 
 process.on('uncaughtException', () => {
+  database.clear()
   database.offloadAndDisconnect(fs)
 })
 
