@@ -62,13 +62,16 @@ global.database = {
   _bindings: {},
   listInline() {
     return JSON.stringify(
-      this.list(),
+      this.show(),
       null,
       '\t',
     );
   },
-  list() {
+  show() {
     return this._store;
+  },
+  clear(){
+    this._store = {}
   },
   connectAndLoad(fs){
       if (fs.existsSync('./db.json')) {
