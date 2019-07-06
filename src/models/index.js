@@ -52,6 +52,12 @@ class Model {
   static get primaryKey(){
       return 'id'
   }
+
+  merge(extraAttributes = {}){
+     this.attributes = Object.assign({}, this.attributes, extraAttributes)
+     
+     return this;
+  }
 }
 
 export default Model
