@@ -10,11 +10,12 @@ class User extends Model {
   static get schema() {
     return Object.assign({}, {
       id: Number,
-      name: String,
+      first_name: String,
+      last_name: String,
       age: Number,
       email: String,
       password: String,
-      phone_number: String,
+      phoneNumber: String,
       address: String,
     }, super.schema);
   }
