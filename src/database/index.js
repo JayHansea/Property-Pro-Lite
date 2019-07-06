@@ -70,6 +70,19 @@ global.database = {
   list() {
     return this._store;
   },
+  connectAndLoad(fs){
+      if (fs.existsSync('./db.json')) {
+        return false;
+      }
+      this._store = JSON.parse(fs.readFileSync('./db.json', 'utf8'));
+  },
+  offloadAndDisconnect(fs){
+      if (fs.existsSync('./db.json')) {
+        return false;
+      }
+      
+      return strictTypeOf(fs.writeFileSync('./db.json', this.listInline(), 'utf8'), 'undefined');
+  },
   _isEmpty(obj) {
     for (const okey in obj) {
       if (obj.hasOwnProperty(okey)) { return false; }
