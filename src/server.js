@@ -4,7 +4,7 @@
 /* eslint-disable no-underscore-dangle */
 import fs from 'fs'
 import express from 'express';
-import database from './database/index';
+import stub from './database/index';
 import router from './route';
 
 
