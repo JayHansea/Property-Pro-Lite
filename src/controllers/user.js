@@ -12,23 +12,25 @@ const userController = {
     ) {
       return res.status(400).send({ message: 'All fields are required' });
     }
-    const user = userModel.createUser(req.body);
-    return res.status(201).send({ user });
+    
+    const user = new userModel(req.body);
+    database.using(user).write('insert');
+    return res.status(201).send({ user:user.attributes });
   },
 
 
   getAll(req, res) {
-    const users = userModel.findAll();
-    return res.status(200).send(users);
+    const users = database.read(userModel)._rows.map((row) => { return row.attributes; });
+    return res.status(200).send({ users });
   },
 
 
   getOne(req, res) {
-    const oneUser = userModel.findById(req.param.id);
+    const oneUser = database.read(userModel, {id:parseInt(req.param.id)}).first();
     if (!oneUser) {
       return res.status(404).send({ message: 'user not found' });
     }
-    return res.status(200).send(oneUser);
+    return res.status(200).send({ user: oneUser.attributes });
   },
 
 

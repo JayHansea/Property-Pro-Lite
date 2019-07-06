@@ -62,13 +62,29 @@ global.database = {
   _bindings: {},
   listInline() {
     return JSON.stringify(
-      this.list(),
+      this.show(),
       null,
       '\t',
     );
   },
-  list() {
+  show() {
     return this._store;
+  },
+  clear(){
+    this._store = {}
+  },
+  connectAndLoad(fs){
+      if (fs.existsSync('./db.json')) {
+        return false;
+      }
+      this._store = JSON.parse(fs.readFileSync('./db.json', 'utf8'));
+  },
+  offloadAndDisconnect(fs){
+      if (fs.existsSync('./db.json')) {
+        return false;
+      }
+      
+      return strictTypeOf(fs.writeFileSync('./db.json', this.listInline(), 'utf8'), 'undefined');
   },
   _isEmpty(obj) {
     for (const okey in obj) {
@@ -191,4 +207,6 @@ global.database = {
   },
 };
 
-export default database;
+const stub = {db_version:'0.0.1'}
+
+export default stub;

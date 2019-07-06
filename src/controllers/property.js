@@ -1,12 +1,13 @@
 /* eslint-disable import/no-named-as-default-member */
 /* eslint-disable import/no-named-as-default */
 import propertyModel from '../models/property';
+import agentModel from '../models/agent';
 
 const propertyController = {
-  create(req, res) {
+  create(req, res) { // @tochukwu: pass the 'agent_id' or 'agent_email' as a request param here
     if (
       !req.body.onwer
-        && !req.body.status
+        && !req.body.status // 'sold' OR 'not-sold'
         && !req.body.price
         && !req.body.state
         && !req.body.city
@@ -16,19 +17,30 @@ const propertyController = {
     ) {
       return res.status(400).send({ message: 'All fields are required' });
     }
-    const property = propertyModel.createProps(req.body);
+    
+    let clause = {}
+    if(!!req.param.agent_id){
+        clause['id'] = parseInt(req.param.agent_id)
+    }else if(!!!!req.param.agent_email){
+        clause['email'] = parseInt(req.param.agent_email)
+    }
+    
+    const property = new propertyModel(req.body);
+    const agent = database.read(agentModel, clause).first()
+    agent.createsProperty(property); // This agent is creating the property
+    database.using(property).write('insert');
     return res.status(201).send(property);
   },
 
 
   getAll(req, res) {
-    const properties = propertyModel.findAll();
+    const properties = database.read(propertyModel)._rows.map((row) => { return row.attributes; });
     return res.status(200).send(properties);
   },
 
 
   getOne(req, res) {
-    const oneProp = propertyModel.findById(req.prop.id);
+    const oneProp = database.read(propertyModel, {id:parseInt(req.param.id)}).first();
     if (!oneProp) {
       return res.status(404).send({ message: 'property not found' });
     }
@@ -37,22 +49,22 @@ const propertyController = {
 
 
   update(req, res) {
-    const upProp = propertyModel.findById(req.prop.id);
+    const upProp = database.read(propertyModel, {id:parseInt(req.param.id)}).first();
     if (!upProp) {
       return res.status(404).send({ message: 'property not found' });
     }
-    const updatedProp = propertyModel.updateProps(req.prop.id, req.body);
+    const updatedProp = database.using(propertyModel.merge(req.body)).write('update', {id:parseInt(req.param.id)});
     return res.status(200).send(updatedProp);
   },
 
 
   delete(req, res) {
-    const delProp = propertyModel.findById(req.prop.id);
+    const delProp = database.read(propertyModel, {id:req.param.id}).first();
     if (!delProp) {
       return res.status(404).send({ message: 'property not found' });
     }
-    const del = propertyModel.delete(req.prop.id);
-    return res.status(204).send(del);
+    const isEmpty = Boolean(database.delete(propertyModel, {id:parseInt(req.param.id)}));
+    return res.status(204).send({del:true, empty:isEmpty});
   },
 };
 
