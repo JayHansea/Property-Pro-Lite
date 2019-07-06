@@ -204,4 +204,6 @@ global.database = {
   },
 };
 
-export default database;
+const stub = {db_version:'0.0.1'}
+
+export default stub;
