@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import agentModel from '../models/agent';
 
 const agentController = {
@@ -15,13 +16,13 @@ const agentController = {
       return res.status(400).send({ message: 'All fields are required' });
     }
     const agent = new agentModel(req.body);
-    database.using(agent).write('insert')
-    return res.status(201).send({ agent:agent.attributes });
+    database.using(agent).write('insert');
+    return res.status(201).send({ agent: agent.attributes });
   },
 
 
   getAll(req, res) {
-    const agents = database.read(agentModel)._rows.map((row) => { return row.attributes; })
+    const agents = database.read(agentModel)._rows.map((row) => { return row.attributes; });
     return res.status(200).send({ agents });
   },
 
