@@ -10,6 +10,7 @@ class Property extends Model {
   static get schema() {
     return {
       id: Number,
+      owner: Number,
       status: String, // 'sold' OR 'not-sold'
       city: String,
       state: String,

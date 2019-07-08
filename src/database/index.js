@@ -70,21 +70,21 @@ global.database = {
   show() {
     return this._store;
   },
-  clear(){
-    this._store = {}
+  clear() {
+    this._store = {};
   },
-  connectAndLoad(fs){
-      if (fs.existsSync('./db.json')) {
-        return false;
-      }
-      this._store = JSON.parse(fs.readFileSync('./db.json', 'utf8'));
+  connectAndLoad(fs) {
+    if (fs.existsSync(`${__dirname}/db.json`)) {
+      return false;
+    }
+    this._store = JSON.parse(fs.readFileSync(`${__dirname}/db.json`, 'utf8'));
   },
-  offloadAndDisconnect(fs){
-      if (fs.existsSync('./db.json')) {
-        return false;
-      }
-      
-      return strictTypeOf(fs.writeFileSync('./db.json', this.listInline(), 'utf8'), 'undefined');
+  offloadAndDisconnect(fs) {
+    if (fs.existsSync(`${__dirname}/db.json`)) {
+      return false;
+    }
+
+    return strictTypeOf(fs.writeFileSync(`${__dirname}/db.json`, this.listInline(), 'utf8'), 'undefined');
   },
   _isEmpty(obj) {
     for (const okey in obj) {
@@ -207,6 +207,6 @@ global.database = {
   },
 };
 
-const stub = {db_version:'0.0.1'}
+const stub = { db_version: '0.0.1' };
 
 export default stub;
